@@ -89,7 +89,7 @@ public class SimulatorView extends JFrame
 							}
 						};
 						
-						t.run();
+						t.start();
 						
 						
 					}
