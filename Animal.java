@@ -5,6 +5,7 @@ import java.util.List;
  * 
  * @author Project groep 3
  * @version 2011.07.31
+ * test
  */
 public abstract class Animal
 {
