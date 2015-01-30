@@ -1,5 +1,7 @@
 package view;
 
+import ParameterInput;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -70,7 +72,6 @@ public class SimulatorView extends JFrame
         Container contents = getContentPane();
         contents.setLayout(new BoxLayout(contents, BoxLayout.Y_AXIS));
         
-        
         //maak de buttons
         JButton stap1 = new JButton("1 Stap");
         JButton stap100 = new JButton("100 Stappen");
@@ -84,24 +85,21 @@ public class SimulatorView extends JFrame
 		});
 		
 		//actionlistener aan button100 toevoegen
-				stap100.addActionListener(new ActionListener() {
+		stap100.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent event) {
+				Thread t = new Thread() {
 					@Override
-					public void actionPerformed(ActionEvent event) {
-						Thread t = new Thread(){
-							@Override
-							public void run(){
-								for(int i = 0; i<100; i++){
+					public void run() {
+						for (int i = 0; i < 100; i++) {
 							Simulator.simulator.simulateOneStep();
-							//fieldView.update(fieldView.getGraphics());
+							// fieldView.update(fieldView.getGraphics());
 						}
-							}
-						};
-						
-						t.start();
-						
-						
 					}
-				});
+				};
+				t.start();
+			}
+		});
 		
 		
         
@@ -132,6 +130,24 @@ public class SimulatorView extends JFrame
         contents.add(middle);
         contents.add(south);
         
+        //maak JMenuBar
+        JMenuBar menu = new JMenuBar();
+        
+        //maak menu 1
+        JMenu edit = new JMenu("Edit");
+        
+        //maak opties edit
+        JMenuItem changeFox = new JMenuItem("Change Fox");
+        JMenuItem changeRabbit = new JMenuItem("Change Rabbit");
+        JMenuItem changeDeer = new JMenuItem("Change Deer");
+        
+        //actionListeners edit
+        changeFox.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				new ParameterInput("Fox");
+				System.out.println("option1-2");
+			}
+		});
         
         
         /* old layout
