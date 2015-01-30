@@ -1,8 +1,17 @@
+package controller;
 import java.util.Random;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.awt.Color;
+
+import model.Animal;
+import model.Field;
+import model.Fox;
+import model.Location;
+import model.Rabbit;
+import model.Randomizer;
+import view.SimulatorView;
 
 /**
  * A simple predator-prey simulator, based on a rectangular field

@@ -1,3 +1,6 @@
+package model;
+import controller.Simulator;
+
 
 public class Main {
 

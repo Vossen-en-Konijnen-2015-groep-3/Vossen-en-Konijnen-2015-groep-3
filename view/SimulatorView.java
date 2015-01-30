@@ -1,6 +1,14 @@
+package view;
+
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
+
+import model.Field;
+import model.FieldStats;
+import controller.Simulator;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 

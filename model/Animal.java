@@ -1,3 +1,4 @@
+package model;
 import java.util.List;
 
 /**
@@ -39,7 +40,7 @@ public abstract class Animal
      * Check whether the animal is alive or not.
      * @return true if the animal is still alive.
      */
-    protected boolean isAlive()
+    public boolean isAlive()
     {
         return alive;
     }
