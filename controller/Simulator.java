@@ -111,7 +111,7 @@ public class Simulator
      * Iterate over the whole field updating the state of each
      * fox and rabbit.
      */
-    public void simulateOneStep()
+    public synchronized void simulateOneStep()
     {
         step++;
 
