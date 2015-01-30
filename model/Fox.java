@@ -15,16 +15,16 @@ public class Fox extends Animal
     // Characteristics shared by all foxes (class variables).
     
     // The age at which a fox can start to breed.
-    private static final int BREEDING_AGE = 15;
+    private static int BREEDING_AGE = 15;
     // The age to which a fox can live.
-    private static final int MAX_AGE = 150;
+    private static int MAX_AGE = 150;
     // The likelihood of a fox breeding.
-    private static final double BREEDING_PROBABILITY = 0.08;
+    private static double BREEDING_PROBABILITY = 0.08;
     // The maximum number of births.
-    private static final int MAX_LITTER_SIZE = 2;
+    private static int MAX_LITTER_SIZE = 2;
     // The food value of a single rabbit. In effect, this is the
     // number of steps a fox can go before it has to eat again.
-    private static final int RABBIT_FOOD_VALUE = 9;
+    private static int RABBIT_FOOD_VALUE = 9;
     
     // The food value of a single rabbit. In effect, this is the
     // number of steps a fox can go before it has to eat again.
@@ -200,4 +200,40 @@ public class Fox extends Animal
     {
         return age >= BREEDING_AGE;
     }
+
+	public static int getBREEDING_AGE() {
+		// TODO Auto-generated method stub
+		return BREEDING_AGE;
+	}
+
+	public static int getMAX_AGE() {
+		// TODO Auto-generated method stub
+		return MAX_AGE;
+	}
+
+	public static double getBREEDING_PROBABILITY() {
+		// TODO Auto-generated method stub
+		return BREEDING_PROBABILITY;
+	}
+
+	public static int getMAX_LITTER_SIZE() {
+		// TODO Auto-generated method stub
+		return MAX_LITTER_SIZE;
+	}
+
+	public static void setBREEDING_AGE(int bREEDING_AGE) {
+		BREEDING_AGE = bREEDING_AGE;
+	}
+
+	public static void setMAX_AGE(int mAX_AGE) {
+		MAX_AGE = mAX_AGE;
+	}
+
+	public static void setBREEDING_PROBABILITY(double bREEDING_PROBABILITY) {
+		BREEDING_PROBABILITY = bREEDING_PROBABILITY;
+	}
+
+	public static void setMAX_LITTER_SIZE(int mAX_LITTER_SIZE) {
+		MAX_LITTER_SIZE = mAX_LITTER_SIZE;
+	}
 }

@@ -116,7 +116,6 @@ public class ParameterInput {
 		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
 		JPanel labels = new JPanel();
 		labels.setLayout(new BoxLayout(labels, BoxLayout.Y_AXIS));
-		labels.add(imageLabel);
 		labels.add(nameLabel);
 		labels.add(BALabel);
 		labels.add(BAText);

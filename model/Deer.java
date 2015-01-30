@@ -14,13 +14,13 @@ public class Deer extends Animal
     // Characteristics shared by all deers (class variables).
 
     // The age at which a deer can start to breed.
-    private static final int BREEDING_AGE = 10;
+    private static int BREEDING_AGE = 10;
     // The age to which a deer can live.
-    private static final int MAX_AGE = 60;
+    private static int MAX_AGE = 60;
     // The likelihood of a deer breeding.
-    private static final double BREEDING_PROBABILITY = 0.05;
+    private static double BREEDING_PROBABILITY = 0.05;
     // The maximum number of births.
-    private static final int MAX_LITTER_SIZE = 2;
+    private static int MAX_LITTER_SIZE = 2;
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
     
@@ -121,4 +121,40 @@ public class Deer extends Animal
     {
         return age >= BREEDING_AGE;
     }
+    
+    public static int getBREEDING_AGE() {
+		// TODO Auto-generated method stub
+		return BREEDING_AGE;
+	}
+
+	public static int getMAX_AGE() {
+		// TODO Auto-generated method stub
+		return MAX_AGE;
+	}
+
+	public static double getBREEDING_PROBABILITY() {
+		// TODO Auto-generated method stub
+		return BREEDING_PROBABILITY;
+	}
+
+	public static int getMAX_LITTER_SIZE() {
+		// TODO Auto-generated method stub
+		return MAX_LITTER_SIZE;
+	}
+	
+	public static void setBREEDING_AGE(int bREEDING_AGE) {
+		BREEDING_AGE = bREEDING_AGE;
+	}
+
+	public static void setMAX_AGE(int mAX_AGE) {
+		MAX_AGE = mAX_AGE;
+	}
+
+	public static void setBREEDING_PROBABILITY(double bREEDING_PROBABILITY) {
+		BREEDING_PROBABILITY = bREEDING_PROBABILITY;
+	}
+
+	public static void setMAX_LITTER_SIZE(int mAX_LITTER_SIZE) {
+		MAX_LITTER_SIZE = mAX_LITTER_SIZE;
+	}
 }

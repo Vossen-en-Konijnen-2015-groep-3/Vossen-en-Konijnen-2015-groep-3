@@ -1,6 +1,6 @@
 package view;
 
-import ParameterInput;
+import controller.ParameterInput;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -144,10 +144,32 @@ public class SimulatorView extends JFrame
         //actionListeners edit
         changeFox.addActionListener(new ActionListener() {
 			public void actionPerformed (ActionEvent e) {
-				new ParameterInput("Fox");
-				System.out.println("option1-2");
+				new controller.ParameterInput("Fox");
 			}
 		});
+        
+        changeRabbit.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				new controller.ParameterInput("Rabbit");
+			}
+		});
+        
+        changeDeer.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				new controller.ParameterInput("Deer");
+			}
+		});
+        
+        //add items to edit
+        edit.add(changeFox);
+        edit.add(changeRabbit);
+        edit.add(changeDeer);
+        
+        //add edit to menubar
+        menu.add(edit);
+        
+        //set menu bar
+        setJMenuBar(menu);
         
         
         /* old layout
