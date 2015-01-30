@@ -26,12 +26,9 @@ public class Fox extends Animal
     // number of steps a fox can go before it has to eat again.
     private static int RABBIT_FOOD_VALUE = 9;
     
-    // The food value of a single rabbit. In effect, this is the
+    // The food value of a single deer. In effect, this is the
     // number of steps a fox can go before it has to eat again.
-    private static final int DEER_FOOD_VALUE = 25;
-    
-    // Chance to fail hunting a Deer in %.
-    private static final int DEATH_CHANCE = 25;
+    private static final int DEER_FOOD_VALUE = 11;
     
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
@@ -140,20 +137,14 @@ public class Fox extends Animal
             }else if(animal instanceof Deer) {
              Deer deer = (Deer) animal;
              
-             int luckyNumber = rand.nextInt(100 / DEATH_CHANCE);
-             luckyNumber++;
-             
              if(deer.isAlive()) {
-            //  if(luckyNumber == 1){
-               // number was not so lucky and the fox died.
-            //   setDead();
-            //  }else{
-            deer.setDead();
-            foodLevel = DEER_FOOD_VALUE;
-            return where;
-              }
+	              
+	            deer.setDead();
+	            foodLevel = DEER_FOOD_VALUE;
+	            return where;
+	              
               
-            // }
+             }
             
             }
         }
