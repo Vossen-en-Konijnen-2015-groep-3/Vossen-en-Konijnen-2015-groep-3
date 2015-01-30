@@ -144,16 +144,16 @@ public class Fox extends Animal
              luckyNumber++;
              
              if(deer.isAlive()) {
-              if(luckyNumber == 1){
+            //  if(luckyNumber == 1){
                // number was not so lucky and the fox died.
-               setDead();
-              }else{
+            //   setDead();
+            //  }else{
             deer.setDead();
             foodLevel = DEER_FOOD_VALUE;
             return where;
               }
               
-             }
+            // }
             
             }
         }
