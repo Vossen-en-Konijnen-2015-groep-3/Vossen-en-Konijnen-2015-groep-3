@@ -79,10 +79,19 @@ public class SimulatorView extends JFrame
 				stap100.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent event) {
-						for(int i = 0; i<100; i++){
+						Thread t = new Thread(){
+							@Override
+							public void run(){
+								for(int i = 0; i<100; i++){
 							Simulator.simulator.simulateOneStep();
-							fieldView.update(fieldView.getGraphics());
+							//fieldView.update(fieldView.getGraphics());
 						}
+							}
+						};
+						
+						t.run();
+						
+						
 					}
 				});
 		
