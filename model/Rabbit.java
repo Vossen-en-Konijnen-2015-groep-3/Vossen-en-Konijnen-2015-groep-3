@@ -8,6 +8,8 @@ import java.util.Random;
  * 
  * @author David J. Barnes and Michael Kölling
  * @version 2011.07.31
+ * 
+ * fixed account
  */
 public class Rabbit extends Animal
 {
@@ -28,6 +30,17 @@ public class Rabbit extends Animal
     
     // The rabbit's age.
     private int age;
+    
+    private final double CHANCE_ON_DISEASE = 0.01;
+    private static final int MAX_DAYS_diseased = 5;
+    private int current_days_diseased = 0;
+    
+    // true/false is the rabbit diseased?
+    private boolean Rabbit_Disease;
+    //chance the rabbit is immune to disease
+    private static int CHANCE_ON_IMMUNITY = 10;
+    //true/false is the rabbit immune to disease?
+    private boolean immune;
 
     /**
      * Create a new rabbit. A rabbit may be created with age
@@ -46,6 +59,22 @@ public class Rabbit extends Animal
         }
     }
     
+	/**
+	 * Set the rabbit to have the disease if it is not immune
+	 */
+	public void getDisease() {
+		Rabbit_Disease = !immune;
+	}
+
+	/**
+	 * 
+	 * @return true if the rabbit has the disease.
+	 * 
+	 */
+	public boolean diseasedRabbit() {
+		return Rabbit_Disease;
+	}
+    
     /**
      * This is what the rabbit does most of the time - it runs 
      * around. Sometimes it will breed or die of old age.
@@ -53,20 +82,37 @@ public class Rabbit extends Animal
      */
     public void act(List<Animal> newRabbits)
     {
+    	
         incrementAge();
         if(isAlive()) {
             giveBirth(newRabbits);            
             // Try to move into a free location.
             Location newLocation = getField().freeAdjacentLocation(getLocation());
             if(newLocation != null) {
-                setLocation(newLocation);
+            	newLocation = getField().freeAdjacentLocation(getLocation());
             }
             else {
                 // Overcrowding.
                 setDead();
             }
+            
+            if (diseasedRabbit() == true) {
+            	//TODO add Actor class and fix field errors
+            	if (getLocation() != null && field.getNearbyRabbits(getLocation()) != null) {
+            		Object otherRabbit = field.getObjectAt(field.getNearbyRabbits(getLocation()));
+            	    if (otherRabbit != null) {
+            	    	if (otherRabbit instanceof Rabbit) {
+            	    		Rabbit closebyRabbit = (Rabbit) otherRabbit;
+            	    		closebyRabbit.getDisease();
+            	    	}
+            	    }
+            	    
+            	    current_days_diseased++;
+            	    
+            	    }
+            	}
+            }
         }
-    }
 
     /**
      * Increase the age.
