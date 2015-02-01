@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.Random;
 
 /**
- * A simple model of a fox.
- * Foxes age, move, eat rabbits, and die.
+ * A simple model of a hunter.
+ * 
  * 
  * @author David J. Barnes and Michael Kölling
  * @version 2011.07.31
