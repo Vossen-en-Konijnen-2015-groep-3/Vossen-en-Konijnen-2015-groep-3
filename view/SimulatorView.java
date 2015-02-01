@@ -73,8 +73,11 @@ public class SimulatorView extends JFrame
         contents.setLayout(new BoxLayout(contents, BoxLayout.Y_AXIS));
         
         //maak de buttons
+        
         JButton stap1 = new JButton("1 Stap");
+        stap1.setPreferredSize(new Dimension(40, 40));
         JButton stap100 = new JButton("100 Stappen");
+        
         
         //actionlistener aan button1 toevoegen
 		stap1.addActionListener(new ActionListener() {
@@ -135,11 +138,16 @@ public class SimulatorView extends JFrame
         
         //maak menu 1
         JMenu edit = new JMenu("Edit");
+        //maak menu 2
+        JMenu view = new JMenu("View");
         
         //maak opties edit
         JMenuItem changeFox = new JMenuItem("Change Fox");
         JMenuItem changeRabbit = new JMenuItem("Change Rabbit");
         JMenuItem changeDeer = new JMenuItem("Change Deer");
+        
+        //maak opties view
+        JMenuItem graph = new JMenuItem("Graph");
         
         //actionListeners edit
         changeFox.addActionListener(new ActionListener() {
@@ -165,8 +173,14 @@ public class SimulatorView extends JFrame
         edit.add(changeRabbit);
         edit.add(changeDeer);
         
-        //add edit to menubar
+        //add edit to menu bar
         menu.add(edit);
+        
+        //add items to view
+        view.add(graph);
+        
+        //add view to menu bar
+        menu.add(view);
         
         //set menu bar
         setJMenuBar(menu);
