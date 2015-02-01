@@ -34,9 +34,11 @@ public class Simulator
     // The probability that a deer will be created in any given grid position.
     private static final double DEER_CREATION_PROBABILITY = 0.02;
     // The probability that a rabbit will be created in any given grid position.
-    private static final double RABBIT_CREATION_PROBABILITY = 0.13; 
+    private static final double RABBIT_CREATION_PROBABILITY = 0.16; 
     // The probability that a rabbit will be created in any given grid position.
     private static final double HUNTER_CREATION_PROBABILITY = 0.001; 
+    // The grass level of a location.
+    private static final int GRASS_LEVEL = 1000;
 
     // List of animals in the field.
     private List<Animal> animals;
@@ -159,25 +161,29 @@ public class Simulator
         field.clear();
         for(int row = 0; row < field.getDepth(); row++) {
             for(int col = 0; col < field.getWidth(); col++) {
+            	Location location = new Location(row, col);
+            	location.setGrassLevel(GRASS_LEVEL);
             	if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY && huntersCount <= 9) {
-            		Location location = new Location(row, col);
+            		//Location location = new Location(row, col);
                     Hunter hunter = new Hunter(field, location);
                     animals.add(hunter);
                     huntersCount ++;
+                    
                 }else if(rand.nextDouble() <= DEER_CREATION_PROBABILITY) {
-            		Location location = new Location(row, col);
+            		//Location location = new Location(row, col);
             		Deer deer = new Deer(true, field, location);
             		animals.add(deer);
                 }else if(rand.nextDouble() <= FOX_CREATION_PROBABILITY) {
-                    Location location = new Location(row, col);
+                    //Location location = new Location(row, col);
                     Fox fox = new Fox(true, field, location);
                     animals.add(fox);
                 }
                 else if(rand.nextDouble() <= RABBIT_CREATION_PROBABILITY) {
-                    Location location = new Location(row, col);
+                   // Location location = new Location(row, col);
                     Rabbit rabbit = new Rabbit(true, field, location);
                     animals.add(rabbit);
                 } 
+            	
                 // else leave the location empty.
             }
         }

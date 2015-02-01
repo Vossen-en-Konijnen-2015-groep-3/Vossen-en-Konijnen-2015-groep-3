@@ -51,14 +51,16 @@ public class Hunter extends Animal
             if(newLocation == null) { 
                 // No food found - try to move to a free location.
                 newLocation = getField().freeAdjacentLocation(getLocation());
-                fallingTree();
+                //fallingTree();
             }
             // See if it was possible to move.
-            if(newLocation != null) {
+            if(newLocation != null && rand.nextDouble() > FALLING_TREE_PROBABILITY) {
                 setLocation(newLocation);
+            }else {
                 fallingTree();
-            }
-            else if(rand.nextDouble() <= FALLING_TREE_PROBABILITY)
+                }
+            
+        }else{
             	// a tree fell on the hunter
             	fallingTree();
             }
@@ -67,9 +69,7 @@ public class Hunter extends Animal
 
     private void fallingTree()
     {
-    	if(rand.nextDouble() <= FALLING_TREE_PROBABILITY){
     		setDead();
-    	}
     }
     
     /**

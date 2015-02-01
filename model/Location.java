@@ -10,6 +10,7 @@ public class Location
     // Row and column positions.
     private int row;
     private int col;
+    private int grassLevel;
 
     /**
      * Represent a row and column.
@@ -36,6 +37,10 @@ public class Location
         }
     }
     
+    public void setGrassLevel(int grassLevel){
+    	this.grassLevel = grassLevel;
+    }
+
     /**
      * Return a string of the form row,column
      * @return A string representation of the location.
@@ -70,5 +75,16 @@ public class Location
     public int getCol()
     {
         return col;
+    }
+    
+    public int getGrassLevel(){
+    	return grassLevel;
+    }
+    
+    public void incrementGrassLevel(){
+    	grassLevel ++;
+    }
+    public void decrementGrassLevel(){
+    	grassLevel --;
     }
 }
