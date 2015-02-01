@@ -31,7 +31,7 @@ public class Rabbit extends Animal
     // The rabbit's age.
     private int age;
     
-    private final double CHANCE_ON_DISEASE = 0.01;
+    private final double CHANCE_ON_DISEASE = 0.00;
     private static final int MAX_DAYS_diseased = 5;
     private int current_days_diseased = 0;
     
@@ -96,7 +96,7 @@ public class Rabbit extends Animal
                 setDead();
             }
             
-            if (diseasedRabbit() == true) {
+           /** if (diseasedRabbit() == true) {
             	//TODO add Actor class and fix field errors
             	if (getLocation() != null && field.getNearbyRabbits(getLocation()) != null) {
             		Object otherRabbit = field.getObjectAt(field.getNearbyRabbits(getLocation()));
@@ -111,6 +111,7 @@ public class Rabbit extends Animal
             	    
             	    }
             	}
+            **/
             }
         }
 
