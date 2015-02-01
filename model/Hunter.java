@@ -124,5 +124,10 @@ public class Hunter extends Animal
 	public static double getFALLING_TREE_PROBABILITY() {
 		return FALLING_TREE_PROBABILITY;
 	}
+	
+	public int getKills() {
+		return kills;
+	}
+	
 
 }

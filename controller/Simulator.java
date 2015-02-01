@@ -9,6 +9,7 @@ import model.Animal;
 import model.Field;
 import model.Fox;
 import model.Deer;
+import model.Hunter;
 import model.Location;
 import model.Rabbit;
 import model.Randomizer;
@@ -29,11 +30,13 @@ public class Simulator
     // The default depth of the grid.
     private static final int DEFAULT_DEPTH = 80;
     // The probability that a fox will be created in any given grid position.
-    private static final double FOX_CREATION_PROBABILITY = 0.05;
+    private static final double FOX_CREATION_PROBABILITY = 0.06;
     // The probability that a deer will be created in any given grid position.
-    private static final double DEER_CREATION_PROBABILITY = 0.01;
+    private static final double DEER_CREATION_PROBABILITY = 0.02;
     // The probability that a rabbit will be created in any given grid position.
-    private static final double RABBIT_CREATION_PROBABILITY = 0.12;    
+    private static final double RABBIT_CREATION_PROBABILITY = 0.13; 
+    // The probability that a rabbit will be created in any given grid position.
+    private static final double HUNTER_CREATION_PROBABILITY = 0.001; 
 
     // List of animals in the field.
     private List<Animal> animals;
@@ -77,6 +80,7 @@ public class Simulator
         view.setColor(Rabbit.class, Color.orange);
         view.setColor(Fox.class, Color.blue);
         view.setColor(Deer.class, Color.green);
+        view.setColor(Hunter.class, Color.red);
         
         // Setup a valid starting point.
         reset();
@@ -150,16 +154,21 @@ public class Simulator
      */
     private void populate()
     {
+    	int huntersCount = 0;
         Random rand = Randomizer.getRandom();
         field.clear();
         for(int row = 0; row < field.getDepth(); row++) {
             for(int col = 0; col < field.getWidth(); col++) {
-            	if(rand.nextDouble() <= DEER_CREATION_PROBABILITY) {
+            	if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY && huntersCount <= 9) {
+            		Location location = new Location(row, col);
+                    Hunter hunter = new Hunter(field, location);
+                    animals.add(hunter);
+                    huntersCount ++;
+                }else if(rand.nextDouble() <= DEER_CREATION_PROBABILITY) {
             		Location location = new Location(row, col);
             		Deer deer = new Deer(true, field, location);
             		animals.add(deer);
-            	}
-            	else if(rand.nextDouble() <= FOX_CREATION_PROBABILITY) {
+                }else if(rand.nextDouble() <= FOX_CREATION_PROBABILITY) {
                     Location location = new Location(row, col);
                     Fox fox = new Fox(true, field, location);
                     animals.add(fox);
@@ -168,7 +177,7 @@ public class Simulator
                     Location location = new Location(row, col);
                     Rabbit rabbit = new Rabbit(true, field, location);
                     animals.add(rabbit);
-                }
+                } 
                 // else leave the location empty.
             }
         }
