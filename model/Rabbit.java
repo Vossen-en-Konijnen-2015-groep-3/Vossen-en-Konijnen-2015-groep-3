@@ -91,8 +91,9 @@ public class Rabbit extends Animal
             
             // Try to move into a free location.
             Location newLocation = getField().freeAdjacentLocation(getLocation());
+            
             if(newLocation != null) {
-            	newLocation = getField().freeAdjacentLocation(getLocation());
+            	setLocation(newLocation);
             }
             else {
                 // Overcrowding.
