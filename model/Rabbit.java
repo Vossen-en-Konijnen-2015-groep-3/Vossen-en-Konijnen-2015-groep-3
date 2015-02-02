@@ -15,7 +15,7 @@ import java.util.Random;
 public class Rabbit extends Animal
 {
     // Characteristics shared by all rabbits (class variables).
-	private static int FOOD_LEVEL = 1000;
+	// private static int FOOD_LEVEL = 1000;
     // The age at which a rabbit can start to breed.
     private static int BREEDING_AGE = 1;
     // The age to which a rabbit can live.
@@ -54,7 +54,7 @@ public class Rabbit extends Animal
     public Rabbit(boolean randomAge, Field field, Location location)
     {
         super(field, location);
-        FOOD_LEVEL = 1000;
+        //FOOD_LEVEL = 1000;
         age = 0;
         if(randomAge) {
             age = rand.nextInt(MAX_AGE);
@@ -84,24 +84,11 @@ public class Rabbit extends Animal
      */
     public void act(List<Animal> newRabbits)
     {
-    	incrementHunger();
+    	//incrementHunger();
         incrementAge();
         if(isAlive()) {
             giveBirth(newRabbits);  
-            Location newLocation = findFood();
-            if(newLocation == null) { 
-                // No food found - try to move to a free location.
-                newLocation = getField().freeAdjacentLocation(getLocation());
-            }
-            // See if it was possible to move.
-            if(newLocation != null) {
-                setLocation(newLocation);
-            }
-            else {
-                // Overcrowding.
-                setDead();
-            }
-            /*
+            
             // Try to move into a free location.
             Location newLocation = getField().freeAdjacentLocation(getLocation());
             if(newLocation != null) {
@@ -111,31 +98,8 @@ public class Rabbit extends Animal
                 // Overcrowding.
                 setDead();
             }
-            */
-        }
-    }
-//--------------------------------------------------------------------------------------------------------------------------       
-    private Location findFood()
-    {
-        Field field = getField();
-        List<Location> adjacent = field.adjacentLocations(getLocation());
-        Iterator<Location> it = adjacent.iterator();
-        while(it.hasNext()) {
-            Location where = it.next();
-            Object animal = field.getObjectAt(where);
             
-            if(animal == null) {
-            	int grassLevel = where.getGrassLevel();
-                if(grassLevel > 0){
-                	where.decrementGrassLevel();
-                	decrementHunger(3);
-                	
-                }
-            return where;
-            
-            }
         }
-        return null;
     }
 
 //--------------------------------------------------------------------------------------------------------------------------          
@@ -170,19 +134,6 @@ public class Rabbit extends Animal
         }
     }
     
-    private void incrementHunger()
-    {
-    	FOOD_LEVEL--;
-        if(FOOD_LEVEL <= 0) {
-            setDead();
-        }
-    }
-    
-    private void decrementHunger(int nr)
-    {
-    	
-    	FOOD_LEVEL += nr; 
-    }
     
     /**
      * Check whether or not this rabbit is to give birth at this step.

@@ -53,7 +53,7 @@ public class Field
     public void clear(Location location)
     {
         field[location.getRow()][location.getCol()] = null;
-        location.setGrassLevel(0);
+
     }
     
     /**

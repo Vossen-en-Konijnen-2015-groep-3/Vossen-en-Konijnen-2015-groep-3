@@ -37,8 +37,7 @@ public class Simulator
     private static final double RABBIT_CREATION_PROBABILITY = 0.16; 
     // The probability that a rabbit will be created in any given grid position.
     private static final double HUNTER_CREATION_PROBABILITY = 0.001; 
-    // The grass level of a location.
-    private static final int GRASS_LEVEL = 100000;
+
 
     // List of animals in the field.
     private List<Animal> animals;
@@ -162,7 +161,6 @@ public class Simulator
         for(int row = 0; row < field.getDepth(); row++) {
             for(int col = 0; col < field.getWidth(); col++) {
             	Location location = new Location(row, col);
-            	location.setGrassLevel(GRASS_LEVEL);
             	if(rand.nextDouble() <= HUNTER_CREATION_PROBABILITY && huntersCount <= 9) {
             		//Location location = new Location(row, col);
                     Hunter hunter = new Hunter(field, location);
