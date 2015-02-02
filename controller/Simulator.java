@@ -186,4 +186,8 @@ public class Simulator
             }
         }
     }
+    
+    public List<Animal> getAnimals(){
+    	return animals;
+    }
 }
