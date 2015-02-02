@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 import javax.swing.JComponent;
+
 import java.util.HashMap;
 
 import model.Counter;
@@ -21,11 +22,27 @@ public class MyComponent extends JComponent {
   // };
    public MyComponent(Field x) {
 	   FieldStats fieldStats = new FieldStats();
+	   for(int row = 0; row < x.getDepth(); row++) {
+           for(int col = 0; col < x.getWidth(); col++) {
+               Object animal = x.getObjectAt(row, col);
+               if(animal != null) {
+            	   fieldStats.incrementCount(animal.getClass());
+               }
+           }
+	   }
+	   fieldStats.countFinished();
 	   HashMap<String, Integer> statistieken = fieldStats.getDetails(x);
-	   int fox = statistieken.get("Fox");
-	   int hunter = statistieken.get("Hunter");
-	   int deer = statistieken.get("Deer");
-	   int rabbit = statistieken.get("Rabbit");
+	   System.out.println(x);
+	  // System.out.println(statistieken);
+	   System.out.println("fuck");
+	   System.out.println(statistieken.keySet().size());
+	   for(int i=0;i<statistieken.keySet().size();i++){
+		   System.out.println("key: "+statistieken.keySet().toArray()[i]);
+	   }
+	   double fox = statistieken.get("model.Fox").doubleValue();
+	   double hunter = statistieken.get("model.Hunter").doubleValue();
+	   double deer = statistieken.get("model.Deer").doubleValue();
+	   double rabbit = statistieken.get("model.Rabbit").doubleValue();
 	   
 	   slices[0] = new Slice(fox, Color.blue);
 	   slices[1] = new Slice(hunter, Color.red);
