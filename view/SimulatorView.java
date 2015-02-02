@@ -310,6 +310,7 @@ public class SimulatorView extends JFrame
     {
         return stats.isViable(field);
     }
+ 
     
     /**
      * Provide a graphical view of a rectangular field. This is 
