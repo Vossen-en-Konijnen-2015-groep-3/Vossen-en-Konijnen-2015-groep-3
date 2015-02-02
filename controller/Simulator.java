@@ -38,7 +38,7 @@ public class Simulator
     // The probability that a rabbit will be created in any given grid position.
     private static final double HUNTER_CREATION_PROBABILITY = 0.001; 
     // The grass level of a location.
-    private static final int GRASS_LEVEL = 1000;
+    private static final int GRASS_LEVEL = 100000;
 
     // List of animals in the field.
     private List<Animal> animals;
