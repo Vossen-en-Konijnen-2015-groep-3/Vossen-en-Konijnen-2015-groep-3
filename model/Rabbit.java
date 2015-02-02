@@ -162,10 +162,8 @@ public class Rabbit extends Animal
     private int breed()
     {
     	
-    	double foodBreedingModifier = (((1.0/ new Integer(Simulator.simulator.getVoedselVoorraad().getBasisVoorraad()).doubleValue())* new Integer(Simulator.simulator.getVoedselVoorraad().calculateVoorraad()).doubleValue())-0.50);
-    	
     	int births = 0;
-        if(canBreed() && rand.nextDouble() <= (BREEDING_PROBABILITY + foodBreedingModifier)) {
+        if(canBreed() && rand.nextDouble() <= (BREEDING_PROBABILITY + Simulator.simulator.getFoodBreedingModifier())) {
             births = rand.nextInt(MAX_LITTER_SIZE) + 1;
         }
         return births;

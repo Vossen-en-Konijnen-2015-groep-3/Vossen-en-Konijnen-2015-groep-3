@@ -55,6 +55,8 @@ public class Simulator
     //De voedselvoorraad
     private VoedselVoorraad voedselVoorraad;
     
+    private double foodBreedingModifier = 0.0;
+    
     /**
      * Construct a simulation field with default size.
      */
@@ -140,6 +142,7 @@ public class Simulator
         animals.addAll(newAnimals);
 
         view.showStatus(step, field);
+        setFoodBreedingModifier(((1.0/ new Integer(Simulator.simulator.getVoedselVoorraad().getBasisVoorraad()).doubleValue())* new Integer(Simulator.simulator.getVoedselVoorraad().calculateVoorraad()).doubleValue())-0.50);
     }
         
     /**
@@ -203,5 +206,13 @@ public class Simulator
     public Field getField(){
     	return field;
     }
+
+	public double getFoodBreedingModifier() {
+		return foodBreedingModifier;
+	}
+
+	public void setFoodBreedingModifier(double foodBreedingModifier) {
+		this.foodBreedingModifier = foodBreedingModifier;
+	}
     
 }
