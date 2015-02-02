@@ -21,7 +21,10 @@ public class Hunter extends Animal
     private static final Random rand = Randomizer.getRandom();
 
     // The hunter gains a kill for ever kill (quite obvious).
-    private int kills;
+    private int rabbitKills;
+    private int deerKills;
+    private int foxKills;
+    
 
     /**
      * Create a hunter. Hunters are not hungry and cannot die or be eaten by foxes.
@@ -98,7 +101,7 @@ public class Hunter extends Animal
                 if(rabbit.isAlive()) { 
                     rabbit.setDead();
                     // Remove the dead rabbit from the field.
-                    kills ++;
+                    rabbitKills ++;
                     return where;
                 }
              // else if animal is a deer, shoot it aswell.
@@ -108,7 +111,7 @@ public class Hunter extends Animal
 	             if(deer.isAlive()) {
 		              
 		            deer.setDead();
-		            kills ++;
+		            deerKills ++;
 		            return where;
 	             }
             }else if(animal instanceof Fox) {
@@ -117,7 +120,7 @@ public class Hunter extends Animal
 	             if(fox.isAlive()) {
 		              
 		            fox.setDead();
-		            kills ++;
+		            foxKills ++;
 		            return where;
 	             }
            }else if(animal instanceof Hunter) {
@@ -133,8 +136,14 @@ public class Hunter extends Animal
 		return FALLING_TREE_PROBABILITY;
 	}
 	
-	public int getKills() {
-		return kills;
+	public int getDeerKills() {
+		return deerKills;
+	}
+	public int getFoxKills() {
+		return foxKills;
+	}
+	public int getRabbitKills() {
+		return rabbitKills;
 	}
 	
 

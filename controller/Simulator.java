@@ -198,6 +198,11 @@ public class Simulator
     public void startDecease(){
     
     }
+    
+    public int getDeerKills(){
+    	getAnimals();
+    	return 1;
+    }
 
     public List<Animal> getAnimals(){
     	return animals;
