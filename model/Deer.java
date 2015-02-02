@@ -2,6 +2,8 @@ package model;
 import java.util.List;
 import java.util.Random;
 
+import controller.Simulator;
+
 /**
  * A simple model of a deer.
  * deers age, move, breed, and die.
@@ -106,8 +108,10 @@ public class Deer extends Animal
      */
     private int breed()
     {
+    	double foodBreedingModifier = (((1.0/ new Integer(Simulator.simulator.getVoedselVoorraad().getBasisVoorraad()).doubleValue())* new Integer(Simulator.simulator.getVoedselVoorraad().calculateVoorraad()).doubleValue())-0.50);
+    	
         int births = 0;
-        if(canBreed() && rand.nextDouble() <= BREEDING_PROBABILITY) {
+        if(canBreed() && rand.nextDouble() <= (BREEDING_PROBABILITY + foodBreedingModifier)) {
             births = rand.nextInt(MAX_LITTER_SIZE) + 1;
         }
         return births;
