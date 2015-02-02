@@ -9,10 +9,16 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.JFrame;
 
 import model.Fox;
 import model.Rabbit;
 import model.Deer;
+import model.Hunter;
+import model.Field;
+import model.FieldStats;
+
+import view.MyComponent;
 
 public class ParameterInput {
 	//vars
@@ -31,6 +37,7 @@ public class ParameterInput {
 	private JTextField MAText = new JTextField();
 	private JTextField BPText = new JTextField();
 	private JTextField LSText = new JTextField();
+	private MyComponent component;
 	
 	
 	public ParameterInput(){
@@ -163,12 +170,26 @@ public class ParameterInput {
 			litterSize = Rabbit.getMAX_LITTER_SIZE();
 		}
 		if(animal.equals("Deer")){
-			//Chicken BS
+			//Deers BS
 			nameLabel = new JLabel("Herten");
 			breedingAge = Deer.getBREEDING_AGE();
 			maxAge = Deer.getMAX_AGE();
 			breedingProbability = Deer.getBREEDING_PROBABILITY();
 			litterSize = Deer.getMAX_LITTER_SIZE();
+		}
+		if(animal.equals("graph")){
+			
+		}
+		if(animal.equals("piechart")){
+			JFrame test = new JFrame();
+			Container contentPane = test.getContentPane();
+			component = new MyComponent(Simulator.simulator.getField());
+			contentPane.add(component);
+			test.pack();
+			test.setVisible(true);
+		}
+		if(animal.equals("barchart")){
+	
 		}
 	}
 	

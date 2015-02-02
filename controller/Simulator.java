@@ -199,4 +199,9 @@ public class Simulator
     public VoedselVoorraad getVoedselVoorraad(){
     	return voedselVoorraad;
     }
+    
+    public Field getField(){
+    	return field;
+    }
+    
 }

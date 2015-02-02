@@ -27,6 +27,10 @@ public class FieldStats
         counters = new HashMap<Class, Counter>();
         countsValid = true;
     }
+    
+    public HashMap<Class, Counter> getCounters(){
+    	return counters;
+    }
 
     /**
      * Get details of what is in the field.
@@ -47,6 +51,22 @@ public class FieldStats
         }
         return buffer.toString();
     }
+    
+    public HashMap<String, Integer> getDetails(Field field)
+    {
+        StringBuffer buffer = new StringBuffer();
+        if(!countsValid) {
+            generateCounts(field);
+        }
+        HashMap temp = new HashMap <String, Integer>();
+        for(Class key : counters.keySet()) {
+            Counter info = counters.get(key);
+            temp.put(info.getName(), info.getCount());
+        }
+        return temp;
+    }
+    
+    
     
     /**
      * Invalidate the current set of statistics; reset all 

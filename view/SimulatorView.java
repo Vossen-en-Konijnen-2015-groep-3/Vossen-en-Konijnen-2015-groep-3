@@ -148,6 +148,29 @@ public class SimulatorView extends JFrame
         
         //maak opties view
         JMenuItem graph = new JMenuItem("Graph");
+        JMenuItem Piechart = new JMenuItem("Piechart");
+        JMenuItem Barchart = new JMenuItem("Barchart");
+        
+        //actionListeners view
+        
+        graph.addActionListener(new ActionListener(){
+        	public void actionPerformed (ActionEvent e) {
+        		new controller.ParameterInput("graph");
+        	}
+        });
+        
+        Piechart.addActionListener(new ActionListener(){
+        	public void actionPerformed (ActionEvent e) {
+        		new controller.ParameterInput("piechart");
+        	}
+        });
+        
+        Barchart.addActionListener(new ActionListener(){
+        	public void actionPerformed (ActionEvent e) {
+        		new controller.ParameterInput("barchart");
+        	}
+        });
+        	
         
         //actionListeners edit
         changeFox.addActionListener(new ActionListener() {
@@ -178,6 +201,9 @@ public class SimulatorView extends JFrame
         
         //add items to view
         view.add(graph);
+        view.add(Piechart);
+        view.add(Barchart);
+        
         
         //add view to menu bar
         menu.add(view);
