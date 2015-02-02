@@ -1,5 +1,4 @@
-package model;
-import controller.Simulator;
+package controller;
 
 
 public class Main {
