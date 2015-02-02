@@ -16,7 +16,7 @@ public class VoedselVoorraad {
 		Iterator<Animal> iterator = Simulator.simulator.getAnimals().iterator();
 		int herbivoreCount = 0;
 		while(iterator.hasNext()){
-			Animal animal = iterator.next();
+			Actor animal = iterator.next();
 			if(animal instanceof Rabbit || animal instanceof Deer){
 				herbivoreCount++;
 			}
