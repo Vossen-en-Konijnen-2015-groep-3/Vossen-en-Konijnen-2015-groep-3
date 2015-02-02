@@ -3,6 +3,8 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.Random;
 
+import view.SimulatorView;
+
 /**
  * A simple model of a hunter.
  * 
@@ -70,6 +72,12 @@ public class Hunter extends Animal
     private void fallingTree()
     {
     		setDead();
+    		try {
+				Play.main(null);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
     }
     
     /**
