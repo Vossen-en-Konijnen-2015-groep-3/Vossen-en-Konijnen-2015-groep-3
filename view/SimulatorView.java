@@ -4,7 +4,11 @@ import controller.ParameterInput;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 import model.Field;
@@ -223,6 +227,19 @@ public class SimulatorView extends JFrame
         
         pack();
         setVisible(true);
+    }
+    
+    
+    public void playSound() {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("boom.mp3"));
+            Clip clip = AudioSystem.getClip( );
+            clip.open(audioInputStream);
+            clip.start( );
+        }
+        catch(Exception e)  {
+            e.printStackTrace( );
+        }
     }
     
     /**

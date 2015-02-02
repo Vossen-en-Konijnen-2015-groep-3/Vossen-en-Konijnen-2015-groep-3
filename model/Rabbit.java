@@ -41,7 +41,7 @@ public class Rabbit extends Animal
     // true/false is the rabbit diseased?
     private boolean Rabbit_Disease;
     //chance the rabbit is immune to disease
-    private static int CHANCE_ON_IMMUNITY = 10;
+    private static int CHANCE_ON_IMMUNITY = 50;
     //true/false is the rabbit immune to disease?
     private boolean immune;
 
@@ -106,6 +106,7 @@ public class Rabbit extends Animal
     
 
            if (diseasedRabbit() == true) {
+        	   System.out.println("Er is een konijn ziek geworden.");
             	if (getLocation() != null && getField().getNearbyRabbits(getLocation()) != null) {
             		Object otherRabbit = getField().getObjectAt(getField().getNearbyRabbits(getLocation()));
             	    if (otherRabbit != null) {
