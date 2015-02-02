@@ -1,4 +1,5 @@
 package model;
+
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -132,6 +133,20 @@ public class Field
         }
         return free;
     }
+    
+	public Location getNearbyRabbits(Location location) {
+		List<Location> adjacent = adjacentLocations(location);
+		for (Location next : adjacent) {
+			if (!(getObjectAt(next) == null)) {
+				Actor animal = (Animal)getObjectAt(next);
+				if (animal instanceof Rabbit) {
+					Rabbit rabbit = (Rabbit)animal;
+					return rabbit.getLocation();
+				}
+			}
+		}
+		return null;
+	}
     
     /**
      * Try to find a free location that is adjacent to the
