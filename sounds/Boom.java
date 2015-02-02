@@ -1,4 +1,4 @@
-package model;
+package sounds;
 
 import java.io.*;
 import sun.audio.*;
@@ -8,13 +8,13 @@ import sun.audio.*;
  * AudioStream and AudioPlayer code comes from a javaworld.com example.
  * @author alvin alexander, devdaily.com.
  */
-public class Play
+public class Boom
 {
   public static void main(String[] args) throws Exception
   {
     // open the sound file as a Java input stream
-    String gongFile = "/Users/WobSawd/boom.wav";
-    InputStream in = new FileInputStream(gongFile);
+    String soundFile = "/boom.wav";
+    InputStream in = Boom.class.getResourceAsStream("/boom.wav");
  
     // create an audiostream from the inputstream
     AudioStream audioStream = new AudioStream(in);

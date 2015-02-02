@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.Random;
 
+import sounds.Boom;
 import view.SimulatorView;
 
 /**
@@ -76,7 +77,7 @@ public class Hunter extends Animal
     {
     		setDead();
     		try {
-				Play.main(null);
+				sounds.Boom.main(null);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
