@@ -8,15 +8,15 @@ public class VoedselVoorraad {
 
 	private int basisVoorraad;
 	
-	public VoedselVoorraad(){
-		
+	public VoedselVoorraad(Field field){
+		basisVoorraad = (field.getDepth() * field.getWidth());
 	}
 	
 	private int calculateHerbivores(){
 		Iterator<Animal> iterator = Simulator.simulator.getAnimals().iterator();
 		int herbivoreCount = 0;
 		while(iterator.hasNext()){
-			Animal animal = iterator.next();
+			Actor animal = iterator.next();
 			if(animal instanceof Rabbit || animal instanceof Deer){
 				herbivoreCount++;
 			}
@@ -28,5 +28,9 @@ public class VoedselVoorraad {
 	public int calculateVoorraad(){
 		
 		return (basisVoorraad - calculateHerbivores());
+	}
+	
+	public int getBasisVoorraad(){
+		return basisVoorraad;
 	}
 }

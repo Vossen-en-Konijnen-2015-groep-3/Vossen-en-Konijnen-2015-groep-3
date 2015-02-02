@@ -7,7 +7,7 @@ import java.util.List;
  * @author Project groep 3
  * @version 2015.01.30
  */
-public abstract class Animal
+public abstract class Animal implements Actor
 {
     // Whether the animal is alive or not.
     private boolean alive;
@@ -29,12 +29,11 @@ public abstract class Animal
         setLocation(location);
     }
     
-    /**
-     * Make this animal act - that is: make it do
-     * whatever it wants/needs to do.
-     * @param newAnimals A list to receive newly born animals.
-     */
-    abstract public void act(List<Animal> newAnimals);
+    /* (non-Javadoc)
+	 * @see model.Actor#act(java.util.List)
+	 */
+    @Override
+	abstract public void act(List<Animal> newAnimals);
 
     /**
      * Check whether the animal is alive or not.

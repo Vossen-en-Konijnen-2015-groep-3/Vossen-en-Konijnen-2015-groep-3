@@ -3,6 +3,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import controller.Simulator;
+
 /**
  * A simple model of a rabbit.
  * Rabbits age, move, breed, and die.
@@ -162,8 +164,11 @@ public class Rabbit extends Animal
      */
     private int breed()
     {
-        int births = 0;
-        if(canBreed() && rand.nextDouble() <= BREEDING_PROBABILITY) {
+    	
+    	double foodBreedingModifier = (((1.0/ new Integer(Simulator.simulator.getVoedselVoorraad().getBasisVoorraad()).doubleValue())* new Integer(Simulator.simulator.getVoedselVoorraad().calculateVoorraad()).doubleValue())-0.50);
+    	
+    	int births = 0;
+        if(canBreed() && rand.nextDouble() <= (BREEDING_PROBABILITY + foodBreedingModifier)) {
             births = rand.nextInt(MAX_LITTER_SIZE) + 1;
         }
         return births;
