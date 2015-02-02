@@ -183,7 +183,8 @@ public class ParameterInput {
 		if(animal.equals("piechart")){
 			JFrame test = new JFrame();
 			Container contentPane = test.getContentPane();
-			component = new MyComponent(Simulator.simulator.getField());
+			Field field = Simulator.simulator.getField();
+			component = new MyComponent(field);
 			contentPane.add(component);
 			test.pack();
 			test.setVisible(true);
