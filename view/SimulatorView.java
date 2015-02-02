@@ -4,11 +4,7 @@ import controller.ParameterInput;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 import model.Field;
@@ -81,7 +77,23 @@ public class SimulatorView extends JFrame
         JButton stap1 = new JButton("1 Stap");
         stap1.setPreferredSize(new Dimension(40, 40));
         JButton stap100 = new JButton("100 Stappen");
+        JButton reset = new JButton("Reset");
+        JButton ziek = new JButton("Release HELL!");
+		
+		
+        ziek.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				Simulator.simulator.startDecease();
+			}
+		});
         
+        reset.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				Simulator.simulator.reset();
+			}
+		});
         
         //actionlistener aan button1 toevoegen
 		stap1.addActionListener(new ActionListener() {
@@ -124,6 +136,8 @@ public class SimulatorView extends JFrame
         west.add(stap1);
         west.add(Box.createRigidArea(new Dimension(0,5)));
         west.add(stap100);
+        west.add(ziek);
+        west.add(reset);
         
         //vul east
         east.add(fieldView);
@@ -227,19 +241,6 @@ public class SimulatorView extends JFrame
         
         pack();
         setVisible(true);
-    }
-    
-    
-    public void playSound() {
-        try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("boom.mp3"));
-            Clip clip = AudioSystem.getClip( );
-            clip.open(audioInputStream);
-            clip.start( );
-        }
-        catch(Exception e)  {
-            e.printStackTrace( );
-        }
     }
     
     /**

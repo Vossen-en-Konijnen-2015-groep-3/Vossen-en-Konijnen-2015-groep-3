@@ -59,6 +59,8 @@ public class ParameterInput {
 		
 		JButton OK = new JButton("OK");
 		JButton reset = new JButton("Reset");
+		
+		
 		OK.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				//TODO get text, filter text, update vars;

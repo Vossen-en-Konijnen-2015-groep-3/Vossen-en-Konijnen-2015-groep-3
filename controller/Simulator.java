@@ -195,6 +195,10 @@ public class Simulator
         }
     }
     
+    public void startDecease(){
+    
+    }
+
     public List<Animal> getAnimals(){
     	return animals;
     }
