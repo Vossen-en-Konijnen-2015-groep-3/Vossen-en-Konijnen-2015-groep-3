@@ -3,6 +3,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import controller.Simulator;
+
 /**
  * A simple model of a rabbit.
  * Rabbits age, move, breed, and die.
@@ -161,6 +163,8 @@ public class Rabbit extends Animal
      */
     private int breed()
     {
+    	
+    	
         int births = 0;
         if(canBreed() && rand.nextDouble() <= BREEDING_PROBABILITY) {
             births = rand.nextInt(MAX_LITTER_SIZE) + 1;

@@ -13,6 +13,7 @@ import model.Hunter;
 import model.Location;
 import model.Rabbit;
 import model.Randomizer;
+import model.VoedselVoorraad;
 import view.SimulatorView;
 
 /**
@@ -51,6 +52,9 @@ public class Simulator
     //De simulator
     public static Simulator simulator;
     
+    //De voedselvoorraad
+    private VoedselVoorraad voedselVoorraad;
+    
     /**
      * Construct a simulation field with default size.
      */
@@ -88,6 +92,7 @@ public class Simulator
         
         //voeg toe aan de variabel simulator.
         simulator = this;
+        voedselVoorraad = new VoedselVoorraad(field);
     }
     
     /**
@@ -189,5 +194,9 @@ public class Simulator
     
     public List<Animal> getAnimals(){
     	return animals;
+    }
+    
+    public VoedselVoorraad getVoedselVoorraad(){
+    	return voedselVoorraad;
     }
 }
