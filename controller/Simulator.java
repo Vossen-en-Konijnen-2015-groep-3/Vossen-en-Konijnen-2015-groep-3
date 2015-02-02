@@ -39,6 +39,9 @@ public class Simulator
     // The probability that a rabbit will be created in any given grid position.
     private static final double HUNTER_CREATION_PROBABILITY = 0.001; 
 
+    private int deerKills = 0;
+    private int foxKills = 0;
+    private int rabbitKills = 0;
 
     // List of animals in the field.
     private List<Animal> animals;
@@ -96,6 +99,7 @@ public class Simulator
         simulator = this;
         voedselVoorraad = new VoedselVoorraad(field);
     }
+    
     
     /**
      * Run the simulation from its current state for a reasonably long period,
@@ -199,10 +203,39 @@ public class Simulator
     
     }
     
-    public int getDeerKills(){
-    	getAnimals();
-    	return 1;
+    public void updateKills(){
+    	for(Animal x : getAnimals()){
+    		if(x instanceof Hunter){
+    			deerKills += ((Hunter) x).getDeerKills();
+    			foxKills += ((Hunter) x).getFoxKills();
+    			rabbitKills += ((Hunter) x).getRabbitKills();	
+    		}
+    	}
     }
+    
+    public int getDeerKills(){
+    	if (deerKills > 0){
+    		return deerKills;
+    	}else{ 
+    		return 0;
+    	}
+    }
+    
+    public int getFoxKills(){
+    	if (foxKills > 0){
+    		return foxKills;
+    	}else{ 
+    		return 0;
+    	}
+    }
+    
+    public int getRabbitKills(){
+    	if (rabbitKills > 0){
+	    	return rabbitKills;
+    	}else{ 
+    		return 0;
+    	}
+    } 
 
     public List<Animal> getAnimals(){
     	return animals;

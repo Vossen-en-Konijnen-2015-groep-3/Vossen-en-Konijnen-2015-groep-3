@@ -19,6 +19,7 @@ import model.Field;
 import model.FieldStats;
 
 import view.MyComponent;
+import view.PieChartHunterKills;
 
 public class ParameterInput {
 	//vars
@@ -38,6 +39,7 @@ public class ParameterInput {
 	private JTextField BPText = new JTextField();
 	private JTextField LSText = new JTextField();
 	private MyComponent component;
+	private PieChartHunterKills component2;
 	
 	
 	public ParameterInput(){
@@ -179,15 +181,20 @@ public class ParameterInput {
 			breedingProbability = Deer.getBREEDING_PROBABILITY();
 			litterSize = Deer.getMAX_LITTER_SIZE();
 		}
-		if(animal.equals("graph")){
-			
-		}
-		if(animal.equals("piechart")){
+		if(animal.equals("piechartPopulation")){
 			JFrame test = new JFrame();
 			Container contentPane = test.getContentPane();
 			Field field = Simulator.simulator.getField();
 			component = new MyComponent(field);
 			contentPane.add(component);
+			test.pack();
+			test.setVisible(true);
+		}
+		if(animal.equals("piechartHunterKills")){
+			JFrame test = new JFrame();
+			Container contentPane = test.getContentPane();
+			component2 = new PieChartHunterKills(Simulator.simulator.getDeerKills(), Simulator.simulator.getFoxKills(), Simulator.simulator.getRabbitKills());
+			contentPane.add(component2);
 			test.pack();
 			test.setVisible(true);
 		}

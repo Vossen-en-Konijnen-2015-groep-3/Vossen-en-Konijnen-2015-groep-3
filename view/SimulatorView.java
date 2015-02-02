@@ -165,21 +165,21 @@ public class SimulatorView extends JFrame
         JMenuItem changeDeer = new JMenuItem("Change Deer");
         
         //maak opties view
-        JMenuItem graph = new JMenuItem("Graph");
-        JMenuItem Piechart = new JMenuItem("Piechart");
+        JMenuItem PiechartHunterKills = new JMenuItem("piechartHunterKills");
+        JMenuItem PiechartPopulation = new JMenuItem("piechartPopulation");
         JMenuItem Barchart = new JMenuItem("Barchart");
         
         //actionListeners view
         
-        graph.addActionListener(new ActionListener(){
+        PiechartHunterKills.addActionListener(new ActionListener(){
         	public void actionPerformed (ActionEvent e) {
-        		new controller.ParameterInput("graph");
+        		new controller.ParameterInput("piechartHunterKills");
         	}
         });
-        
-        Piechart.addActionListener(new ActionListener(){
+ 
+        PiechartPopulation.addActionListener(new ActionListener(){
         	public void actionPerformed (ActionEvent e) {
-        		new controller.ParameterInput("piechart");
+        		new controller.ParameterInput("piechartPopulation");
         	}
         });
         
@@ -218,8 +218,8 @@ public class SimulatorView extends JFrame
         menu.add(edit);
         
         //add items to view
-        view.add(graph);
-        view.add(Piechart);
+        view.add(PiechartHunterKills);
+        view.add(PiechartPopulation);
         view.add(Barchart);
         
         

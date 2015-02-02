@@ -9,17 +9,11 @@ import javax.swing.JComponent;
 
 import java.util.HashMap;
 
-import model.Counter;
 import model.FieldStats;
 import model.Field;
 
 public class MyComponent extends JComponent {
   Slice[] slices = new Slice[4];
-  // = { new Slice(5, Color.black), 
-  // new Slice(33, Color.green),
-  // new Slice(20, Color.yellow), 
-  // new Slice(15, Color.red) 
-  // };
    public MyComponent(Field x) {
 	   FieldStats fieldStats = new FieldStats();
 	   for(int row = 0; row < x.getDepth(); row++) {

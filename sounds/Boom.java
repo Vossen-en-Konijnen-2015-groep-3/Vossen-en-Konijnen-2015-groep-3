@@ -10,6 +10,7 @@ import sun.audio.*;
  */
 public class Boom
 {
+
   public static void main(String[] args) throws Exception
   {
     // open the sound file as a Java input stream
