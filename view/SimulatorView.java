@@ -167,6 +167,7 @@ public class SimulatorView extends JFrame
         west.add(stap100);
         west.add(ziek);
         west.add(reset);
+        west.add(runLong);
         west.add(new JLabel(legenda));
         
         //vul east
