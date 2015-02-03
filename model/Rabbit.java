@@ -24,7 +24,7 @@ public class Rabbit extends Animal
     // The likelihood of a rabbit breeding.
     private static double BREEDING_PROBABILITY = 0.1;
     // The maximum number of births.
-    private static int MAX_LITTER_SIZE = 5;
+    private static int MAX_LITTER_SIZE = 6;
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
     

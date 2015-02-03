@@ -18,11 +18,11 @@ public class Deer extends Animal
     // The age at which a deer can start to breed.
     private static int BREEDING_AGE = 5;
     // The age to which a deer can live.
-    private static int MAX_AGE = 150;
+    private static int MAX_AGE = 250;
     // The likelihood of a deer breeding.
     private static double BREEDING_PROBABILITY = 0.10;
     // The maximum number of births.
-    private static int MAX_LITTER_SIZE = 6;
+    private static int MAX_LITTER_SIZE = 5;
     // A shared random number generator to control breeding.
     private static final Random rand = Randomizer.getRandom();
     
