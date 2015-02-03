@@ -33,6 +33,7 @@ public class ParameterInput {
 	private JLabel MALabel = new JLabel("Vul de leeftijd in waarop de dieren sterven [e.g. 18]");
 	private JLabel BPLabel = new JLabel("Vul de kans van voortplanting in [e.g. 0.36]");
 	private JLabel LSLabel = new JLabel("Vul de het maximum aantal geboortes per dier per stap in [e.g. 3]");
+<<<<<<< HEAD
 	private JLabel AuthorLabel1 = new JLabel("<html>De simulatie applicatie is gemaakt door:"
 			+ "<br>Jan-Bert van Slochteren"
 			+ "<br>Robert van Timmeren"
@@ -40,6 +41,8 @@ public class ParameterInput {
 			+ "<br>Marcel Oostebring"
 			+ "</html>");
 
+=======
+>>>>>>> parent of 7ab5cc4... javadoc ParameterInput.java
 	private JLabel imageLabel;
 	private JTextField BAText = new JTextField();
 	private JTextField MAText = new JTextField();
@@ -188,6 +191,7 @@ public class ParameterInput {
 			breedingProbability = Deer.getBREEDING_PROBABILITY();
 			litterSize = Deer.getMAX_LITTER_SIZE();
 		}
+<<<<<<< HEAD
 		if(animal.equals("piechartPopulation")){
 			JFrame test = new JFrame();
 			Container contentPane = test.getContentPane();
@@ -197,6 +201,9 @@ public class ParameterInput {
 			test.pack();
 			test.setVisible(true);
 		}
+=======
+		
+>>>>>>> parent of 7ab5cc4... javadoc ParameterInput.java
 		if(animal.equals("piechartHunterKills")){
 			JFrame test = new JFrame();
 			Container contentPane = test.getContentPane();
@@ -206,6 +213,7 @@ public class ParameterInput {
 			test.setVisible(true);
 		}
 		if(animal.equals("barchart")){
+<<<<<<< HEAD
 			
 		}
 		
@@ -215,6 +223,9 @@ public class ParameterInput {
 			contentPane.add(AuthorLabel1);
 			test.pack();
 			test.setVisible(true);
+=======
+	
+>>>>>>> parent of 7ab5cc4... javadoc ParameterInput.java
 		}
 	}
 	
