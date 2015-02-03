@@ -200,7 +200,7 @@ public class Simulator
     }
     
     public void startDecease(){
-    
+    	
     }
     
     public void updateKills(){

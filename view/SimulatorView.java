@@ -165,6 +165,8 @@ public class SimulatorView extends JFrame
         JMenu edit = new JMenu("Edit");
         //maak menu 2
         JMenu view = new JMenu("View");
+        //maak menu 3
+        JMenu info = new JMenu("Info");
         
         //maak opties edit
         JMenuItem changeFox = new JMenuItem("Change Fox");
@@ -175,6 +177,9 @@ public class SimulatorView extends JFrame
         JMenuItem PiechartHunterKills = new JMenuItem("piechartHunterKills");
         JMenuItem PiechartPopulation = new JMenuItem("piechartPopulation");
         JMenuItem Barchart = new JMenuItem("Barchart");
+        
+        //maak opties Info
+        JMenuItem information = new JMenuItem("Over de applicatie");
         
         //actionListeners view
         
@@ -216,6 +221,13 @@ public class SimulatorView extends JFrame
 			}
 		});
         
+        //actionListeners info
+        information.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				new controller.ParameterInput("information");
+			}
+		});
+        
         //add items to edit
         edit.add(changeFox);
         edit.add(changeRabbit);
@@ -233,6 +245,10 @@ public class SimulatorView extends JFrame
         //add view to menu bar
         menu.add(view);
         
+        //add items to info
+        info.add(information);
+        //add info to menu bar
+        menu.add(info);
         //set menu bar
         setJMenuBar(menu);
         
