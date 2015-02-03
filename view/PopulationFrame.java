@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Container;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
@@ -15,6 +16,7 @@ public class PopulationFrame extends JFrame {
 		Field field = Simulator.simulator.getField();
 		MyComponent component = new MyComponent(field);
 		contentPane.add(component);
+		setPreferredSize(new Dimension(400, 400));
 		pack();
 		setVisible(true);
 	}

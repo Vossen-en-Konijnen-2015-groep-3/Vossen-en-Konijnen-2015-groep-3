@@ -20,8 +20,8 @@ import view.SimulatorView;
  * A simple predator-prey simulator, based on a rectangular field
  * containing rabbits and foxes.
  * 
- * @author David J. Barnes and Michael Kölling
- * @version 2011.07.31
+ * @author Jan-Bert, Marcel, Robert en Jan
+ * @version 03-02-2015
  */
 public class Simulator
 {

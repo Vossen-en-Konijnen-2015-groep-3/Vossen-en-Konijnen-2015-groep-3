@@ -8,10 +8,13 @@ import view.SimulatorView;
 
 /**
  * A simple model of a hunter.
+ * The hunter hunts all animals and can die from a random chance
+ * of having a tree fall on his head. If a tree does fall on him
+ * a sound from sounds.Boom will play.
  * 
  * 
- * @author David J. Barnes and Michael Kölling
- * @version 2011.07.31
+ * @author Jan-Bert, Marcel, Robert en Jan
+ * @version 03-02-2015
  */
 public class Hunter extends Animal
 {
