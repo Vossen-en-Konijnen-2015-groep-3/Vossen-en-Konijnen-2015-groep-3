@@ -20,7 +20,7 @@ public class Deer extends Animal
     // The age to which a deer can live.
     private static int MAX_AGE = 100;
     // The likelihood of a deer breeding.
-    private static double BREEDING_PROBABILITY = 0.14;
+    private static double BREEDING_PROBABILITY = 0.2;
     // The maximum number of births.
     private static int MAX_LITTER_SIZE = 5;
     // A shared random number generator to control breeding.

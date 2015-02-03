@@ -1,5 +1,12 @@
 package controller;
 
+/**
+ * Main method to run the application.
+ * 
+ * @author Jan-Bert, Marcel, Robert en Jan
+ * @version 1.0
+ * 
+ */
 
 public class Main {
 
