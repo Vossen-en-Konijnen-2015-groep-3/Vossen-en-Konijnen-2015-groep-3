@@ -7,6 +7,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
+import sounds.Boom;
 import model.Field;
 import model.FieldStats;
 import controller.Simulator;
@@ -79,8 +80,11 @@ public class SimulatorView extends JFrame
         JButton stap100 = new JButton("100 Stappen");
         JButton reset = new JButton("Reset");
         JButton ziek = new JButton("Release HELL!");
-		
-		
+        ImageIcon legenda = new ImageIcon(SimulatorView.class.getResource("/legenda.png"));
+        
+        
+        
+        
         ziek.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -145,6 +149,7 @@ public class SimulatorView extends JFrame
         west.add(stap100);
         west.add(ziek);
         west.add(reset);
+        west.add(new JLabel(legenda));
         
         //vul east
         east.add(fieldView);
