@@ -186,7 +186,7 @@ public class SimulatorView extends JFrame
  
         PiechartPopulation.addActionListener(new ActionListener(){
         	public void actionPerformed (ActionEvent e) {
-        		new controller.ParameterInput("piechartPopulation");
+        		new view.PopulationFrame();
         	}
         });
         
