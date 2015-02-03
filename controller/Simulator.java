@@ -201,6 +201,16 @@ public class Simulator
     
     public void startDecease(){
     	
+    	int ziek = 0;
+    	
+    		for(Animal x : getAnimals()){
+    			if(x instanceof Rabbit && ziek <= 10){
+    				((Rabbit) x).setDisease();
+    				ziek ++;
+    				
+    			}
+    		}
+    	
     }
     
     public void updateKills(){

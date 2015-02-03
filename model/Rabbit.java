@@ -37,6 +37,7 @@ public class Rabbit extends Animal
     private final double CHANCE_ON_DISEASE = 0.5;
     private static final int MAX_DAYS_diseased = 5;
     private int current_days_diseased = 0;
+    private int ziekeStappen = 0;
     
     // true/false is the rabbit diseased?
     private boolean Rabbit_Disease;
@@ -44,6 +45,7 @@ public class Rabbit extends Animal
     private static int CHANCE_ON_IMMUNITY = 50;
     //true/false is the rabbit immune to disease?
     private boolean immune;
+    
 
     /**
      * Create a new rabbit. A rabbit may be created with age
@@ -66,8 +68,16 @@ public class Rabbit extends Animal
 	/**
 	 * Set the rabbit to have the disease if it is not immune
 	 */
-	public void getDisease() {
+	public void setDisease() {
 		Rabbit_Disease = !immune;
+	}
+	
+	public void incrementZiekeStappen() {
+		ziekeStappen++;
+	}
+	
+	public int getZiekeStappen(){
+		return ziekeStappen;
 	}
 
 	/**
@@ -87,6 +97,10 @@ public class Rabbit extends Animal
      */
     public void act(List<Animal> newRabbits)
     {
+    	
+
+    		
+
     	//incrementHunger();
         incrementAge();
         if(isAlive()) {
@@ -107,13 +121,18 @@ public class Rabbit extends Animal
     
 
            if (diseasedRabbit() == true) {
+        	   setMAX_LITTER_SIZE(1);
+        	   if(current_days_diseased >= rand.nextInt(50)){
+       				setDead();
+       				System.out.println("Er is een ziek konijn dood gegaan.");
+        	   }
         	   System.out.println("Er is een konijn ziek geworden.");
             	if (getLocation() != null && getField().getNearbyRabbits(getLocation()) != null) {
             		Object otherRabbit = getField().getObjectAt(getField().getNearbyRabbits(getLocation()));
             	    if (otherRabbit != null) {
             	    	if (otherRabbit instanceof Rabbit) {
             	    		Rabbit closebyRabbit = (Rabbit) otherRabbit;
-            	    		closebyRabbit.getDisease();
+            	    		closebyRabbit.setDisease();
             	    	}
             	    }
             	    
