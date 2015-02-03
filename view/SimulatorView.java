@@ -80,8 +80,12 @@ public class SimulatorView extends JFrame
         JButton stap100 = new JButton("100 Stappen");
         JButton reset = new JButton("Reset");
         JButton ziek = new JButton("Release HELL!");
-        ImageIcon legenda = new ImageIcon(SimulatorView.class.getResource("/legenda.png"));
         
+        // Maak de leggenda en resize deze 
+        ImageIcon legenda_img = new ImageIcon(SimulatorView.class.getResource("/legenda.png"));
+        Image img_legenda = legenda_img.getImage();
+        Image newimg = img_legenda.getScaledInstance(100, 110,  java.awt.Image.SCALE_SMOOTH);
+        ImageIcon legenda = new ImageIcon(newimg);
         
         
         
