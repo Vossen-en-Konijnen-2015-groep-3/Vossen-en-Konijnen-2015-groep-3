@@ -107,13 +107,7 @@ public class SimulatorView extends JFrame
 			@Override
 			public void actionPerformed(ActionEvent e){
 				Simulator.simulator.startDecease();
-	    		try {
-					sounds.Ziekte.main(null);
-				} catch (Exception a) {
-					a.printStackTrace();
-				}
 			}
-			
 		});
         
         reset.addActionListener(new ActionListener(){
