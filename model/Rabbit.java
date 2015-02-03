@@ -11,7 +11,7 @@ import controller.Simulator;
  * 
  * @author Jan-Bert, Marcel, Robert en Jan
  * @version 03-02-2015
-
+ * 
  */
 public class Rabbit extends Animal
 {
@@ -33,6 +33,7 @@ public class Rabbit extends Animal
     // The rabbit's age.
     private int age;
     
+    // Unused fields for rabbits diseases. 
     private final double CHANCE_ON_DISEASE = 0.5;
     private static final int MAX_DAYS_diseased = 5;
     private int current_days_diseased = 0;

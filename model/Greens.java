@@ -2,6 +2,13 @@ package model;
 
 import java.util.List;
 
+/**
+ * 
+ * @author Jan-Bert, Marcel, Robert en Jan
+ * @version 03-02-2015
+ * 
+ */
+
 public class Greens implements Actor {
 
 	private int size = 5;
