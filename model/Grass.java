@@ -2,6 +2,12 @@ package model;
 import java.util.List;
 import java.util.Iterator;
 import java.util.Random;
+/**
+ * 
+ * @author Jan-Bert, Marcel, Robert en Jan
+ * @version 03-02-2015
+ * 
+ */
 
 public class Grass extends Animal {
 	

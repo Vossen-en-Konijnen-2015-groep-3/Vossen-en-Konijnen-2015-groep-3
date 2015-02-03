@@ -75,7 +75,10 @@ public class Hunter extends Animal
             }
         }
     
-
+    /**
+     * A method to kill the hunter (a tree falls on him)
+     * and play sound of a tree falling.
+     */
     private void fallingTree()
     {
     		setDead();
@@ -87,9 +90,6 @@ public class Hunter extends Animal
 
     }
     
-    /**
-     * @return Where an animal was found, or null if it wasn't an animal or the location was empty.
-     */
     private Location findFood()
     {
         Field field = getField();

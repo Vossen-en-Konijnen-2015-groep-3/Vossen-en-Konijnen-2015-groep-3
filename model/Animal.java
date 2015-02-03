@@ -5,7 +5,7 @@ import java.util.List;
  * A class representing shared characteristics of animals.
  * 
  * @author Jan-Bert, Marcel, Robert en Jan
- * @version 2015.01.30
+ * @version 01-30-2015
  */
 public abstract class Animal implements Actor
 {

@@ -8,7 +8,7 @@ import java.awt.Color;
  * the simulation.
  * 
  * @author Jan-Bert, Marcel, Robert en Jan
- * @version 2015.01.27
+ * @version 27-01-2015
  */
 public class Counter
 {
