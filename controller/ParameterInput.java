@@ -54,18 +54,16 @@ public class ParameterInput {
 	}
 	
 	/**
-	 * no idea of what this should be and do
-	 * TODO ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	 * Creates a JFrame in which various parameters of the animals can be adjusted.
 	 * @param animal
 	 */
 	public ParameterInput(final String animal) {
 		//TODO fix all this BS;
-		//
 		setVariables(animal);
 		setText();
 		//TODO textfields etc.;
 		frame = new JFrame();
-		
+		//variable for max age
 		JButton OK = new JButton("OK");
 		JButton reset = new JButton("Reset");
 		
@@ -74,8 +72,11 @@ public class ParameterInput {
 			public void actionPerformed(ActionEvent e){
 				//TODO get text, filter text, update vars;
 				String BAString = BAText.getText();
+				//variable for breeding age 
 				String MAString = MAText.getText();
+				//variable for breeding probability
 				String BPString = BPText.getText();
+				//variable for litter size
 				String LSString = LSText.getText();
 				//Set Strings to usable types;
 				try{
@@ -114,6 +115,7 @@ public class ParameterInput {
 					System.out.println("chicken aangepast");
 				}
 				
+				//closes the frame
 				frame.dispose();
 				}
 				catch(NumberFormatException except){
@@ -123,13 +125,13 @@ public class ParameterInput {
 				
 			}
 		});
+		//reset the parameters of the animal if they haven't been saved yet.
 		reset.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				setText();
-				
-				///////////
 			}
 		});
+		//adding everything to the frame
 		Container contentPane = frame.getContentPane();
 		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
 		JPanel labels = new JPanel();
@@ -156,6 +158,9 @@ public class ParameterInput {
 		
 	}
 	
+	/**
+	 * Sets the current parameters of the animal in the textfields
+	 */
 	private void setText(){
 		BAText.setText(new String().valueOf(breedingAge));
 		MAText.setText(new String().valueOf(maxAge));
@@ -163,6 +168,10 @@ public class ParameterInput {
 		LSText.setText(new String().valueOf(litterSize));
 	}
 	
+	/**
+	 * Sets the variables for the animal that is spicified.
+	 * @param animal
+	 */
 	private void setVariables(String animal){
 		if(animal.equals("Fox")){
 			//Fox BS
@@ -197,6 +206,7 @@ public class ParameterInput {
 			test.pack();
 			test.setVisible(true);
 		}
+		
 		if(animal.equals("piechartHunterKills")){
 			JFrame test = new JFrame();
 			Container contentPane = test.getContentPane();
