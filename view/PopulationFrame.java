@@ -7,6 +7,11 @@ import javax.swing.JFrame;
 
 import model.Field;
 import controller.Simulator;
+/**
+* This class shows the pie charts.
+* @author Jan-Bert, Marcel, Robert en Jan
+* @version 03-02-2015
+**/
 
 public class PopulationFrame extends JFrame {
 

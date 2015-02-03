@@ -12,6 +12,14 @@ import java.util.HashMap;
 import model.FieldStats;
 import model.Field;
 
+/**
+ * This is the pie chart of population.
+ * 
+ * @author Jan-Bert, Marcel, Robert en Jan
+ * @version 03-02-2015
+ * 
+ */
+
 public class MyComponent extends JComponent {
   Slice[] slices = new Slice[4];
    public MyComponent(Field x) {
@@ -26,10 +34,6 @@ public class MyComponent extends JComponent {
 	   }
 	   fieldStats.countFinished();
 	   HashMap<String, Integer> statistieken = fieldStats.getDetails(x);
-	   System.out.println(x);
-	  // System.out.println(statistieken);
-	   System.out.println("fuck");
-	   System.out.println(statistieken.keySet().size());
 	   for(int i=0;i<statistieken.keySet().size();i++){
 		   System.out.println("key: "+statistieken.keySet().toArray()[i]);
 	   }

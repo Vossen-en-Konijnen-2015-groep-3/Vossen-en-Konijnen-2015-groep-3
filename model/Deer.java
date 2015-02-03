@@ -8,8 +8,8 @@ import controller.Simulator;
  * A simple model of a deer.
  * deers age, move, breed, and die.
  * 
- * @author David J. Barnes and Michael Kölling
- * @version 2011.07.31
+ * @author Jan-Bert, Marcel, Robert en Jan
+ * @version 02-02-2015
  */
 public class Deer extends Animal
 {

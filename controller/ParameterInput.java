@@ -21,6 +21,15 @@ import model.FieldStats;
 import view.MyComponent;
 import view.PieChartHunterKills;
 
+/**
+ * Parameter Input class
+ * In this class you can edit values of foxes, rabbits and deers through pop-ups.
+ * 
+ * @author Jan-Bert, Marcel, Robert en Jan
+ * @version 1.0
+ * 
+ */
+
 public class ParameterInput {
 	//vars
 	private JFrame frame;

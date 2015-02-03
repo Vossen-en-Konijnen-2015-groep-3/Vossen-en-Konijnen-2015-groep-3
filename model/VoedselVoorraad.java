@@ -4,6 +4,14 @@ import java.util.Iterator;
 
 import controller.Simulator;
 
+/**
+ * This class tracks the amount of food used by deers and rabbits.
+ * 
+ * @author Jan-Bert, Marcel, Robert en Jan
+ * @version 03-02-2015
+ * 
+ */
+
 public class VoedselVoorraad {
 
 	private int basisVoorraad;

@@ -7,6 +7,9 @@ import java.util.Random;
  * @author Jan-Bert, Marcel, Robert en Jan
  * @version 03-02-2015
  * 
+ * This class is not used.
+ * 
+ * 
  */
 
 public class Grass extends Animal {
