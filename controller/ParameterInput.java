@@ -181,15 +181,7 @@ public class ParameterInput {
 			breedingProbability = Deer.getBREEDING_PROBABILITY();
 			litterSize = Deer.getMAX_LITTER_SIZE();
 		}
-		if(animal.equals("piechartPopulation")){
-			JFrame test = new JFrame();
-			Container contentPane = test.getContentPane();
-			Field field = Simulator.simulator.getField();
-			component = new MyComponent(field);
-			contentPane.add(component);
-			test.pack();
-			test.setVisible(true);
-		}
+		
 		if(animal.equals("piechartHunterKills")){
 			JFrame test = new JFrame();
 			Container contentPane = test.getContentPane();

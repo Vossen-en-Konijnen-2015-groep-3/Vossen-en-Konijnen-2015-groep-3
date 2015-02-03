@@ -180,7 +180,7 @@ public class SimulatorView extends JFrame
         
         PiechartHunterKills.addActionListener(new ActionListener(){
         	public void actionPerformed (ActionEvent e) {
-        		new controller.ParameterInput("piechartHunterKills");
+        		new view.HunterKillFrame();
         	}
         });
  
