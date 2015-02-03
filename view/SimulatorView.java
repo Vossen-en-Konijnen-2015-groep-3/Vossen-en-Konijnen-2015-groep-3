@@ -80,6 +80,7 @@ public class SimulatorView extends JFrame
         JButton stap100 = new JButton("100 Stappen");
         JButton reset = new JButton("Reset");
         JButton ziek = new JButton("Release HELL!");
+        JButton runLong = new JButton("Run long");
         
         // Maak de leggenda en resize deze 
         ImageIcon legenda_img = new ImageIcon(SimulatorView.class.getResource("/legenda.png"));
@@ -88,6 +89,19 @@ public class SimulatorView extends JFrame
         ImageIcon legenda = new ImageIcon(newimg);
         
         
+        runLong.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				Thread t = new Thread(){
+					@Override
+					public void run(){
+						Simulator.simulator.runLongSimulation();
+					}
+				};
+				t.start();
+				
+			}
+		});
         
         ziek.addActionListener(new ActionListener(){
 			@Override
